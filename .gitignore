@@ -1,0 +1,10 @@
+build/
+dist/
+.pypirc
+src/pshmodule.egg-info
+src/pshmodule/__pycache__/
+src/pshmodule/selenium/__pycache__/
+src/pshmodule/processing/__pycache__
+src/pshmodule/db/__pycache__
+test/__pycache__/
+test/db_config.py
