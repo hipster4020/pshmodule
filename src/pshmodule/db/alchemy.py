@@ -1,7 +1,7 @@
 import pandas as pd
 import pymysql
 import sqlalchemy
-from src.pshmodule.db.config import make_data_source
+from pshmodule.db.config import make_data_source
 
 
 class DataSource:
@@ -39,6 +39,7 @@ class DataSource:
 
     def df_to_sql(self, df: pd.DataFrame, table_name: str):
         """
+        dataframe 형식으로 database insert 
         Args:
             df(DataFrame): 데이터베이스에 저장할 데이터프레임 객체
             table_name(str): 테이블 이름
@@ -49,7 +50,7 @@ class DataSource:
 
     def execute_query(self, query: str):
         """
-        단순히 query 실행
+        simply query excute
         Args:
             query(str): 실행할 쿼리
         """
@@ -84,7 +85,7 @@ class DataSource:
 
     def select_query_to_df(self, query: str):
         """
-        쿼리 결과를 데이터프레임 형태로 반환
+        select 쿼리 결과를 데이터프레임 형태로 반환
         Args:
             query(str): 실행할 쿼리
         """

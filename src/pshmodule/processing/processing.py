@@ -138,10 +138,10 @@ class Processing:
         result = re.sub(r"[\r|\n]", "", result)
         result = re.sub(r"\[[^)]*\]", "", result)
         result = re.sub(r"\([^)]*\)", "", result)
-        result = re.sub(r"[^ ㄱ-ㅣ가-힣A-Za-z0-9.]", "", result)
+        result = re.sub(r"[^ ㄱ-ㅣ가-힣A-Za-z0-9]", "", result)
         result = re.sub(r"이 글은 외부 필자인 +[a-zA-Z가-힣]", "", result)
         result = re.sub(r"[a-zA-Z가-힣]+기고입니다.", "", result)
-        result = result.replace(".", "")
+        result = result.replace(".", " ")
         result = result[:result.find('관련기사')]
         result = result[:result.find('관련 기사')]
         result = result.strip()
