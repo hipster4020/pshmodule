@@ -107,6 +107,7 @@ class Processing:
             .replace("appeared first on 모비인사이드 MOBIINSIDE", "")
             .replace("appeared first on 모비 인사이드 MOBIINSIDE", "")
             .replace("The post", "")
+            .replace(".", " ")
         )
         result = re.sub("http[s]?://(?:[a-zA-Z]|[0-9]|[$\-@\.&+:/?=]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+", "", result)
         result = re.sub(r"[a-zA-Z가-힣]+뉴스", "", result)
@@ -141,9 +142,9 @@ class Processing:
         result = re.sub(r"[^ ㄱ-ㅣ가-힣A-Za-z0-9]", "", result)
         result = re.sub(r"이 글은 외부 필자인 +[a-zA-Z가-힣]", "", result)
         result = re.sub(r"[a-zA-Z가-힣]+기고입니다.", "", result)
-        result = result.replace(".", " ")
-        result = result[:result.find('관련기사')]
-        result = result[:result.find('관련 기사')]
+        if result.find("관련 기사") != -1 or result.find("관련기사") != -1:
+            result = result[:result.find('관련기사')]
+            result = result[:result.find('관련 기사')]
         result = result.strip()
 
         return result        
