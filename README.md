@@ -13,6 +13,7 @@ selenium : selenium 크롤링
 ## 👉🏻 use to
 test directory의 test 파일로 예시 참고 ex) alchemy_test, selenium_test
 <br>
+https://github.com/hipster4020/pshmodule/tree/master/test
 
 <br>
 
