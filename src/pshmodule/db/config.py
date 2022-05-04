@@ -15,7 +15,7 @@ def make_data_source(db_info, db_name):
     password = db_info["pwd"]
     host = db_info["ip"]
     port = db_info["port"]
-    
+
     data_source = (
         "mysql+pymysql://"
         + db_id

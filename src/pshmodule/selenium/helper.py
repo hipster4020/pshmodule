@@ -1,8 +1,9 @@
 import re
 
+from webdriver_manager.chrome import ChromeDriverManager
+
 from selenium import webdriver
 from selenium.webdriver.remote.webdriver import WebDriver
-from webdriver_manager.chrome import ChromeDriverManager
 
 
 class Helper:
