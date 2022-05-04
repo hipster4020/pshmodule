@@ -14,7 +14,11 @@ selenium : selenium 크롤링
 test directory의 test 파일로 예시 참고 ex) alchemy_test, selenium_test
 <br>
 https://github.com/hipster4020/pshmodule/tree/master/test
+<br>
 
+
+## 👉🏻 install
+pip3 install shpark-module
 <br>
 
 
@@ -44,7 +48,3 @@ https://github.com/hipster4020/pshmodule/tree/master/test
 ## 👉🏻 regist
 python3 setup.py sdist bdist_wheel
 twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
-
-
-## 👉🏻 install
-pip3 install shpark-module
