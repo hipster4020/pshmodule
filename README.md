@@ -9,6 +9,7 @@ processing : data 정규표현식 전처리
 <br>
 selenium : selenium 크롤링
 <br>
+utils : filemanager 파일 load, save 및 전반 utils
 <br>
 
 ## 👉🏻 use to
