@@ -1,6 +1,7 @@
 # 🤖 AI Module
 
 ### 👉🏻 데이터 수집, 전처리, DB 관련 패키지
+#### pshmodule  https://pypi.org/project/pshmodule/
 <br>
 db :  sqlalchemy, pymysql excutemany query
 <br>
@@ -18,7 +19,7 @@ https://github.com/hipster4020/pshmodule/tree/master/test
 
 
 ## 👉🏻 install
-pip3 install shpark-module
+pip3 install pshmodule
 <br>
 
 
