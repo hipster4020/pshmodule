@@ -77,7 +77,7 @@ def save(path: str, data):
                 """
                 Write list of objects to a JSON lines file for DeepLearning.
                 """
-                if 'label' in data.columns or 'content' in data.columns:
+                if 'label' in data.columns and 'content' in data.columns:
                     temp_dict = [{"content": row['content'].strip(), "label": row['label']} for _, row in data.iterrows()]
                     with open(path, 'w', encoding='utf-8') as f:
                         for line in temp_dict:

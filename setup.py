@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pshmodule",  # 프로젝트 이름
-    version="0.1.11",  # 프로젝트 버전
+    version="0.1.12",  # 프로젝트 버전
     description="Modules related to preprocessing, crawling, collection, database, data load & save ",  # 간단한 설명
     url="https://github.com/hipster4020/package-module",  # 프로젝트 주소
     author="shpark610",  # 작성자
