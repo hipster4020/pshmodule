@@ -1,5 +1,6 @@
 import datetime
 import re
+from jamo import h2j, j2hcj
 
 
 def date_to_str(str_date: str, portal: str) -> str:
@@ -154,3 +155,42 @@ def news_preprocessing(content: str) -> str:
     result = result.strip()
 
     return result
+
+
+# key: 종성 x, value: 종성 o
+s_dict = {'는':'은', '가':'이', '를':'을', '와':'과', '랑':'이랑', '로':'으로', '와도':'과도', '와는':'과는', '랑도':'이랑도', '랑은':'이랑은', '로는':'으로는'}
+
+def jongsung_rep(text: str, s: str) -> str:
+    """
+    낱말 받침의 종성 여부에 따라 조사를 다르게 변경하는 메서드
+    Args:
+        text (str): string text
+        s (str): string josa
+
+    Returns:
+        str: processed content
+    """
+
+    # 종성 확인
+    sample_text_list = list(text)
+    last_word = sample_text_list[-1]
+    last_word_jamo_list = list(j2hcj(h2j(last_word)))
+    last_jamo = last_word_jamo_list[-1]
+
+    jongsung_TF = "T"
+
+    if last_jamo in ['ㅏ', 'ㅑ', 'ㅓ', 'ㅕ', 'ㅗ', 'ㅛ', 'ㅜ', 'ㅠ', 'ㅡ', 'ㅣ', 'ㅘ', 'ㅚ', 'ㅙ', 'ㅝ', 'ㅞ', 'ㅢ', 'ㅐ', 'ㅔ', 'ㅟ', 'ㅖ', 'ㅒ']:
+        jongsung_TF = "F"
+    
+    # 종성 확인 후 조사 변경
+    if last_jamo == 'ㄹ' and s == '으로':
+      s = '로'
+    elif last_jamo == 'ㄹ' and s == '로':
+      s = '로'
+    elif jongsung_TF == "T" and s in s_dict.keys():
+      s = s_dict[s]
+    elif jongsung_TF == "F" and s not in s_dict.keys():
+      temp = [i[0] for i in s_dict.items() if s == i[1]]
+      s = temp[0] if temp else s
+
+    return text + s

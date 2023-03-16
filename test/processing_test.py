@@ -4,10 +4,10 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 
 # pip3 install pshmodule test
-from pshmodule.processing import processing as p
+# from pshmodule.processing import processing as p
 
 # 일반 test
-# from src.pshmodule.processing import processing as p
+from src.pshmodule.processing import processing as p
 
 
 def main():
@@ -20,6 +20,10 @@ def main():
     content = p.news_preprocessing(content)
 
     print(f"processed content : {content}")
+
+    result = p.jongsung_rep('서울', '으로')
+    print(f"result : {result}")
+
 
 
 if __name__ == "__main__":
