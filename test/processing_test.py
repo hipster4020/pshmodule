@@ -17,13 +17,24 @@ def main():
     print(f"content : {content}")
     print("--------------------" * 3)
 
-    content = p.news_preprocessing(content)
-
+    # 뉴스 관련 전처리
+    news = p.News()
+    content = news.news_preprocessing(content)
     print(f"processed content : {content}")
 
-    result = p.jongsung_rep('서울', '으로')
+    # 자연어 처리
+    nlp = p.Nlp()
+
+    result = nlp.jongsung_rep("서울", "로")
     print(f"result : {result}")
 
+    j_unicode = nlp.convert_to_other_unicode("안녕하세요 다음을 읽어주세요👉🏻")
+    print(f"json unicode : {j_unicode}")
+
+    p_unicode = nlp.convert_to_python_unicode(j_unicode)
+    print(f"python unicode : {p_unicode}")
+
+    print(f"emoji : {nlp.convert_emojis_in_text(p_unicode)}")
 
 
 if __name__ == "__main__":
